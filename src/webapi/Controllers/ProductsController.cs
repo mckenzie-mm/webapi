@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using webapi.DTO_mappings;
+using webapi.Models;
 using webapi.Services;
 
 namespace webapi.Controllers;
@@ -38,10 +39,11 @@ public class ProductsController(ProductsService productsService) : ControllerBas
             : Ok(ProductResponse.FromModel(product));
     }
 
+  
     [HttpGet]
-    public IActionResult Get()
+    public IEnumerable<Product> Get()
     {
-       return   Ok("get all products");
+        return  _productsService.Get();
     }
 }
 

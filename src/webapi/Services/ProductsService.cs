@@ -18,4 +18,10 @@ public class ProductsService
         // pull the product from the database
         return ProductsRepository.Find(x => x.Id == productId);
     }
+
+    public IEnumerable<Product> Get()
+    {
+        // return all the products from the database
+        return ProductsRepository;
+    }
 }
