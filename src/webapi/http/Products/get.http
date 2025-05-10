@@ -1,0 +1,5 @@
+@host = http://localhost:5189
+
+
+GET {{host}}/products
+Accept: application/json
